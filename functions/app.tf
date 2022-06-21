@@ -54,13 +54,13 @@ resource "azurerm_function_app" "sentiment-analysis" {
   os_type                    = "linux"
   version                    = "~4"
   https_only                 = true
-  http2_enabled              = true
 
   app_settings {
     FUNCTIONS_WORKER_RUNTIME = "python"
   }
 
   site_config {
+    http2_enabled    = true
     linux_fx_version = "python|3.9"
   }
 }
