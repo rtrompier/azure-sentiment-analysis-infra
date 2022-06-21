@@ -1,0 +1,4 @@
+resource_group_name  = "RG-WE-D-TERRAFORM"
+storage_account_name = "hugaswedappsexttf"
+container_name       = "states"
+key                  = "tf-d-box-containers.tfstate"
