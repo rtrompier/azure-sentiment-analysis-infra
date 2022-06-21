@@ -34,9 +34,9 @@ resource "azurerm_service_plan" "functions" {
 }
 
 resource "azurerm_linux_function_app" "sentiment_analysis" {
-  name                = "azure-sentiment-analysis"
-  resource_group_name = azurerm_resource_group.functions.name
-  location            = azurerm_resource_group.functions.location
+  name                 = "azure-sentiment-analysis"
+  resource_group_name  = azurerm_resource_group.functions.name
+  location             = azurerm_resource_group.functions.location
   storage_account_name = azurerm_storage_account.accounts.name
   service_plan_id      = azurerm_service_plan.functions.id
   https_only           = true
