@@ -33,7 +33,7 @@ resource "azurerm_service_plan" "functions" {
   sku_name            = "Y1"
 }
 
-resource "azurerm_function_app" "sentiment-analysis" {
+resource "azurerm_function_app" "sentiment_analysis" {
   name                       = "azure-sentiment-analysis"
   location                   = azurerm_resource_group.functions.location
   resource_group_name        = azurerm_resource_group.functions.name
