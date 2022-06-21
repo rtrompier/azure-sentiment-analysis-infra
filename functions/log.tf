@@ -15,7 +15,7 @@ resource "azurerm_log_analytics_workspace" "log_analytics_workspace" {
 # Tell our azure function that it needs to log to the log analytics workspace
 resource "azurerm_monitor_diagnostic_setting" "mds_functions" {
   name                       = "mds-${var.location_lower}-${var.env_letter_lower}-hug-functions"
-  target_resource_id         = azurerm_function_app.sentiment_analysis.id
+  target_resource_id         = azurerm_linux_function_app.sentiment_analysis.id
   log_analytics_workspace_id = azurerm_log_analytics_workspace.log_analytics_workspace.id
 
   log {
