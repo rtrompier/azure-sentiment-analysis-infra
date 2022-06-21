@@ -57,5 +57,5 @@ resource "azurerm_function_app" "sentiment-analysis" {
 resource "azurerm_load_test" "example" {
   name                = "lt-azure-functions"
   resource_group_name = azurerm_resource_group.functions.name
-  location            = azurerm_resource_group.functions.location
+  location            = "northeurope"
 }
