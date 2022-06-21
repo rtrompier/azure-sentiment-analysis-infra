@@ -26,7 +26,7 @@ resource "azurerm_monitor_diagnostic_setting" "mds_functions" {
       enabled = false
     }
   }
-  
+
   metric {
     category = "AllMetrics"
     enabled  = false
