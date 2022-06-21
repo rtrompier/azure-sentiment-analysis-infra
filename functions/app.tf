@@ -44,7 +44,7 @@ resource "azurerm_function_app" "sentiment-analysis" {
   version                    = "~4"
   https_only                 = true
 
-  app_settings {
+  app_settings = {
     FUNCTIONS_WORKER_RUNTIME = "python"
   }
 
