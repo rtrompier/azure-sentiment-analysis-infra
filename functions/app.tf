@@ -41,12 +41,12 @@ resource "azurerm_linux_function_app" "sentiment_analysis" {
   service_plan_id      = azurerm_service_plan.functions.id
   https_only           = true
 
-  application_stack = {
-    python_version = "3.9"
-  }
-
   site_config {
     http2_enabled = true
+
+    application_stack {
+      python_version = "3.9"
+    }
   }
 }
 
