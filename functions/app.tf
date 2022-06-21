@@ -53,6 +53,8 @@ resource "azurerm_function_app" "sentiment-analysis" {
   storage_account_access_key = azurerm_storage_account.accounts.primary_access_key
   os_type                    = "linux"
   version                    = "~4"
+  https_only                 = true
+  http2_enabled              = true
 
   app_settings {
     FUNCTIONS_WORKER_RUNTIME = "python"

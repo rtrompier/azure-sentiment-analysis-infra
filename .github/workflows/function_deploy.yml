@@ -42,7 +42,7 @@ jobs:
       with:
         directory: "./functions"
         framework: terraform
-        # skip_check: CKV_GIT_4,CKV_AZURE_35,CKV2_AZURE_1,CKV2_AZURE_18,CKV2_AZURE_8,CKV2_AZURE_21,CKV_AZURE_33 # Pour CKV2_AZURE_8,CKV2_AZURE_21, reflechir au fait d'activer le logging sur un Storage terraform ? Cela auri t-il une plus value ? 
+        skip_check: CKV_AZURE_35,CKV_AZURE_33,CKV_AZURE_56,CKV2_AZURE_18,CKV2_AZURE_1
         quiet: true
  
     - uses: hashicorp/setup-terraform@v1
