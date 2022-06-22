@@ -14,8 +14,21 @@ resource "azurerm_app_service" "sentiment_analysis" {
   location            = azurerm_resource_group.containers.location
   resource_group_name = azurerm_resource_group.containers.name
   app_service_plan_id = azurerm_app_service_plan.containers.id
+  https_only          = true
+  ftps_state          = "FtpsOnly"
 
   site_config {
     linux_fx_version = "DOCKER|rtrompier/azure-sentiment-analysis:latest"
+    http2_enabled    = true
+  }
+
+  logs {
+    failed_request_tracing_enabled  = true
+    detailed_error_messages_enabled = true
+
+    http_logs {
+      retention_in_days = 4
+      retention_in_mb   = 10
+    }
   }
 }
