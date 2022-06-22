@@ -1,3 +1,8 @@
+resource "random_integer" "law_id" {
+  min = 1
+  max = 100
+}
+
 resource "azurerm_log_analytics_workspace" "log_analytics_workspace" {
   # The WorkSpace name has to be unique across the whole of azure, not just the current subscription/tenant.
   name                = "law-${var.location_lower}-${var.env_letter_lower}-test-rtrm-${random_integer.law_id.result}"
