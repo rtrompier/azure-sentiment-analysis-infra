@@ -19,9 +19,10 @@ resource "azurerm_app_service" "sentiment_analysis" {
   https_only          = true
 
   site_config {
-    linux_fx_version = "DOCKER|rtrompier/azure-sentiment-analysis:latest"
-    http2_enabled    = true
-    ftps_state       = "Disabled"
+    linux_fx_version  = "DOCKER|rtrompier/azure-sentiment-analysis:latest"
+    http2_enabled     = true
+    ftps_state        = "Disabled"
+    health_check_path = "/health"
   }
 
   logs {
