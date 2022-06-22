@@ -2,6 +2,8 @@ resource "azurerm_app_service_plan" "containers" {
   name                = "sp-test-rtrm"
   location            = azurerm_resource_group.containers.location
   resource_group_name = azurerm_resource_group.containers.name
+  kind                = "Linux"
+  reserved            = true
 
   sku {
     tier = "PremiumV2"
