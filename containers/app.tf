@@ -29,6 +29,10 @@ resource "azurerm_app_service" "sentiment_analysis" {
     failed_request_tracing_enabled  = true
     detailed_error_messages_enabled = true
 
+    application_logs {
+      file_system_level = "Information"
+    }
+
     http_logs {
       file_system {
         retention_in_days = 4
