@@ -27,8 +27,10 @@ resource "azurerm_app_service" "sentiment_analysis" {
     detailed_error_messages_enabled = true
 
     http_logs {
-      retention_in_days = 4
-      retention_in_mb   = 10
+      file_system {
+        retention_in_days = 4
+        retention_in_mb   = 10
+      }
     }
   }
 }
