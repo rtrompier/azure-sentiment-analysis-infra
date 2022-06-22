@@ -42,7 +42,7 @@ jobs:
       with:
         directory: "./containers"
         framework: terraform
-        skip_check: CKV_AZURE_13,CKV_AZURE_16,CKV_AZURE_80,CKV_AZURE_17,CKV_AZURE_88,CKV_AZURE_71
+        skip_check: CKV_AZURE_13,CKV_AZURE_16,CKV_AZURE_80,CKV_AZURE_17,CKV_AZURE_88,CKV_AZURE_71,CKV_AZURE_78
         quiet: true
  
     - uses: hashicorp/setup-terraform@v1
