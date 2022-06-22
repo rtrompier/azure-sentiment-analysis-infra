@@ -15,11 +15,11 @@ resource "azurerm_app_service" "sentiment_analysis" {
   resource_group_name = azurerm_resource_group.containers.name
   app_service_plan_id = azurerm_app_service_plan.containers.id
   https_only          = true
-  ftps_state          = "Disabled"
 
   site_config {
     linux_fx_version = "DOCKER|rtrompier/azure-sentiment-analysis:latest"
     http2_enabled    = true
+    ftps_state       = "Disabled"
   }
 
   logs {
